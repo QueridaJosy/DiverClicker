@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLICKER</title>
+    <link rel="stylesheet" href="ce/meucss.css">
+</head>
+<body style="text-align: center;">
+    <div id="overlay"></div>
+   <div id="conteudo"> 
+    <h1 class="titulo">🟠AÇAFRÃO CLICKER🟠</h1><br><br>
+    <div id="praficar">
+        <img id="jumpscare" src="../img/image_7.png"> 
+        <div id="melhorias">
+             <p onclick="turbinar()"  id="melhorar" >Açafrão Turbinado!</p>
+                <p onclick="ativainfo1('Tur')"  id="infomelhorar">I</p>
+              <p id="contadormelhorar"></p>     
+         </div>
+        <button onclick="ativar()"  id="nathalia"></button>
+        <div id="video"></div>
+    </div>
+    <div class="posicao">
+    <p id="contagem"  >Açafrões:<span id="dentrodacontagem"></span></p>
+        <button onclick="rolagem()" id="roll">ROLAGEM</button>
+        <p id="mostradorderolagem"></p>
+        <div id="sumonar"><p id="palavras"></p>
+        <p id="eliminar" onclick="apagar()" >X</p>
+        </div>
+        </div>
+    <br><br>
+<div class="container"> 
+    <button id="plantacao" onclick="ativarupgrades('forma1')">PLANTATION DE AÇAFRÕES (100)</button>
+    <button  onclick="porco('pl')"  id="farmmerge" >MERGE!</button>
+    <p id="pracontar"><span id="cucabeludo"></span></p><br><br>
+    <p onclick="ativainfo1('pl')"  id="info">I</p> <!-- INFOMARÇÃO I-->
+    <button id="detox" onclick="ativarupgrades('forma2')">FAZENDA DE DETOX (250)</button>
+    <button onclick="porco('fz')" id="farmmerge2">MERGE!</button>
+    <p onclick="ativainfo1('fz')"  id="info2">I</p> <!-- INFOMARÇÃO I-->
+    <p id="pracontar2"><span id="cucabeludo2"></span></p><br><br>
+    <button onclick="ativarupgrades('forma3')"  id="wepink">BASE WEPINK DE AÇAFRÃO (1500)</button>
+    <p onclick="ativainfo1('pink')"  id="info3">I</p> <!-- INFOMARÇÃO I-->
+    <p id="pracontar3"><span id="cucabeludo3"></span></p><br><br>
+    
+</div>
+</div>    
+<audio id="vaca" src="say3.ogg"></audio>
+<audio id="fnad" src="videoplayback-_5_.mp3"></audio>
+<script>
+
+ var nathaliass = 1
+ var total = 0
+ var plantation = 0;
+ var cuca = 0
+ var intervaloplantation = setInterval(function(){
+    total += plantation;
+    listagem();
+ }, 1000);
+
+ var detox = 0
+ var liquidificador = 0
+ 
+ var intervalodetox = setInterval(function(){
+    total += detox;
+    listagem();
+ }, 5000);
+
+ var wepink = 0
+ var base = 0 
+ var intervalowepink = setInterval(function(){
+    total += wepink;
+    listagem();
+ },10000);
+ 
+
+
+
+
+
+
+ function ativar(){
+
+    total += nathaliass
+    listagem();
+    
+ }
+ function listagem(){
+
+    if (total!=Infinity){ 
+    document.getElementById("dentrodacontagem").innerHTML = total;
+    }else document.getElementById("dentrodacontagem").innerHTML = "🍔";
+    
+    if (total>=100){
+
+        document.getElementById("plantacao").style.opacity="1";
+
+    }else{
+        document.getElementById("plantacao").style.opacity="0.3";
+    }
+    
+    if (total>=250){ 
+        document.getElementById("detox").style.opacity="1";
+        }else{
+        document.getElementById("detox").style.opacity="0.3";
+        }
+    if (total>=1500){
+        document.getElementById("wepink").style.opacity="1";
+    } else{
+        document.getElementById("wepink").style.opacity="0.3";   
+    }
+    
+    if (total>=25){
+        document.getElementById('melhorar').style.opacity="1";
+    }else{
+        document.getElementById('melhorar').style.opacity='0.3';
+    }
+
+ }
+ function ativarupgrades(modal){
+
+    if (modal=='forma1'){
+        if(total>=100){ 
+
+        total -=100;
+        plantation+=1;
+        listagem();
+        document.getElementById("cucabeludo").innerHTML = cuca += 1;
+        document.getElementById("vaca").play();
+        atualizarMerge();
+        ;
+
+
+     }else{
+       
+    alert("Precisa de pelo menos 100 açafrões para clicar");
+    } 
+    return;
+   
+} 
+    if (modal=='forma2'){ 
+        if(total>=250){  
+
+            total -=250;
+            detox +=5;
+            listagem();
+            document.getElementById("cucabeludo2").innerHTML = liquidificador +=1;
+            document.getElementById("video").style.display= "block";
+            document.getElementById("video").innerHTML = '<iframe width="500" height="400" src="https://www.youtube.com/embed/FEaeB5gSrqQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+            atualizarMerge();
+        }else{
+            alert("Precisa de pelo menos 250 açafrões para clicar")
+        }
+    }
+    
+    if (modal=='forma3'){
+        if (total>=1500){
+            total-=1500;
+            wepink += 100
+            listagem();
+            document.getElementById("cucabeludo3").innerHTML = base +=1;
+            atualizarMerge();
+        }else{
+            alert("Precisa de pelo menos 1500 açafrões para clicar");
+        }
+    }
+
+
+}
+ function ativainfo1(botao){
+    if (botao=="pl"){ 
+        document.body.style.opacity="0.8";
+        document.getElementById("sumonar").style.display="block";
+        document.getElementById("palavras").innerHTML="PLANTATION DE AÇAFRÕES! <br><br> aumenta +1 açafrão a cada segundo <br><br> custo = 100 Açafrões";
+    } else if(botao=="fz"){
+        document.body.style.opacity="0.8";
+        document.getElementById("sumonar").style.display="block";
+        document.getElementById("palavras").innerHTML="FAZENDA DE DETOX! <br><br> aumenta +5 açafrões a cada 5 segundos <br><br> custo = 250 Açafrões";
+
+    } else if(botao=="Tur"){ // Habilidade 1
+        document.body.style.opacity="0.8";
+        document.getElementById("sumonar").style.display="block";
+        document.getElementById("palavras").innerHTML="AÇAFRÃO TURBINADO! <br><br> aumenta +1 açafrão a cada clique! <br><br> custo = 25 Açafrões";
+    } else if(botao=="pink"){  
+         document.body.style.opacity="0.8";
+        document.getElementById("sumonar").style.display="block";
+        document.getElementById("palavras").innerHTML="BASES WEPINK DE AÇAFRÃO! <br><br> aumenta +100 açafrões a cada 10 segundos! <br><br> custo = 1500 Açafrões";
+    }
+}    
+function apagar(){
+    document.body.style.opacity="1";
+    document.getElementById("sumonar").style.display="none";
+}
+
+const sequencia = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+const Infinito = Infinity;
+
+let buffer = [];
+
+
+document.addEventListener('keydown', (e) => {
+    buffer.push(e.key); 
+    
+    
+    if (buffer.length > sequencia.length) {
+        buffer.shift();
+    }
+    
+   
+    if (buffer.join(',') === sequencia.join(',')) {
+        total = Infinito;
+        
+        
+        alert("Burguer Code ativado!");
+        buffer = []; 
+        
+        
+    }
+});
+let rollAtivo = false; 
+let rollClicado = false; 
+
+// 10% de chance de aparecer a cada segundo
+setInterval(function() {
+    if (!rollAtivo && Math.random() < 0.3) {
+        rollAtivo = true;
+        rollClicado = false; // reset quando o botão aparece
+        const botao = document.getElementById("roll");
+        const resultado = document.getElementById("mostradorderolagem");
+        
+        botao.style.display = "block";   
+        botao.disabled = false;           
+        resultado.style.display = "none"; // esconde o texto ao reaparecer
+
+        // Some/desativa após 5 segundos
+        setTimeout(function() {
+            botao.style.display = "none";  
+            botao.disabled = true;         
+            resultado.style.display = "none"; // esconde o resultado junto
+            rollAtivo = false;             
+        }, 5000);
+    }
+}, 60000);
+
+var jumpsdiva = false;
+
+setInterval(function(){
+    if (!jumpsdiva && Math.random() < 0.02){
+        jumpsdiva = true;
+        document.getElementById("jumpscare").style.display="block";
+        document.getElementById("fnad").play();
+
+        setTimeout(function(){
+            document.getElementById("jumpscare").style.display="none";
+        }, 5000);
+
+    }
+}, 300000);
+
+
+// Função de rolagem
+function rolagem() {
+    if (rollClicado==true) return; // impede múltiplos cliques
+    rollClicado = true;
+
+    const resultado = document.getElementById("mostradorderolagem");
+    let numero = Math.floor(Math.random() * 500);
+    resultado.style.display = "block";
+    resultado.innerHTML = "Resultado: " + numero;
+    total += numero;
+    listagem();
+}
+function porco(legal){
+
+    if (legal == "pl" && cuca>=3){
+
+        document.getElementById("cucabeludo").innerHTML = cuca -= 3;
+        plantation -=3;
+        document.getElementById("cucabeludo2").innerHTML = liquidificador +=1;
+        document.getElementById("video").style.display= "block";
+        document.getElementById("video").innerHTML = '<iframe width="500" height="400" src="https://www.youtube.com/embed/FEaeB5gSrqQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+        atualizarMerge();
+        detox +=5;
+    } 
+else if (legal =="fz" && liquidificador>=3){
+
+        document.getElementById("cucabeludo2").innerHTML = liquidificador -=3;
+        detox -=3;
+        document.getElementById("cucabeludo3").innerHTML = base +=1;
+        atualizarMerge();
+        wepink +=100;
+        
+    } 
+    
+    
+
+}
+function atualizarMerge(){
+    const btn = document.getElementById("farmmerge")
+    const btn2 = document.getElementById("farmmerge2")
+    if (cuca<3){
+        btn.style.display ="none";
+    }else{
+        btn.style.display ="block";
+    }
+
+    if (liquidificador<3){ 
+        btn2.style.display = "none";
+    }else{
+        btn2.style.display = "block";
+    }    
+
+
+}
+atualizarMerge();
+
+function turbinar(){
+    
+    if (total>=25){
+        nathaliass +=1;
+        total -= 25;
+        listagem();
+        document.getElementById('contadormelhorar').innerHTML = nathaliass - 1;
+        
+    } else{
+        alert('Precisa de pelo menos 25 açafrões para clicar')
+    }
+
+}
+
+
+</script>
+
+</script>
+    
+</body>
+</html>

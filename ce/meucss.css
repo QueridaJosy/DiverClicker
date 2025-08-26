@@ -1,0 +1,368 @@
+
+html, body{
+
+    margin: 0;
+    height: 100%;
+    position: relative;
+    
+}
+#overlay{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top,rgb(187, 117, 25), rgb(116, 66, 25));
+  z-index: 1;
+}
+#conteudo{
+  position: relative;
+  z-index: 2; /* conteúdo fica acima do overlay */
+
+}
+.titulo{
+    display: inline-flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 40px;
+    box-shadow: -4px 6px 20px;
+    font-family: cursive;
+
+}
+#nathalia{
+
+    width: 400px;
+    height: 300px;
+    background-image: url('../image/YwzlT6M.png');
+    background-position: top;
+    border-radius: 30px;
+    
+
+
+}
+#nathalia:active{
+    opacity: 0.8;
+    background-size: 140%;
+    border: solid 3px white;
+
+}
+#contagem{
+
+    font-size: 30px;
+    display: inline-flex;
+    background-color: white;
+    padding: 50px;
+    border-radius: 40px;
+    border: 3px solid black;
+    font-family: cursive;
+    position: relative;
+}
+#plantacao{
+    padding: 30px;
+    border-radius: 40px;
+    font-family: cursive;
+    opacity: 0.3;
+    cursor: pointer;
+
+}
+#plantacao:active, #detox:active{
+    transform: scale(0.9);
+    
+
+}
+
+.container{
+    position: relative;
+    display: inline-block;
+    
+}
+#pracontar{
+
+    position: absolute;
+    top: 0;
+    left: 110%;
+    font-size: 30px;
+    font-family: cursive;
+    transform: translateY(-10px);
+    
+
+}
+#detox{
+
+    padding: 30px;
+    border-radius: 40px;
+    width: 280px;
+    font-family: cursive;
+    opacity: 0.3;
+    cursor: pointer;
+} 
+#pracontar2{
+
+    position: absolute;
+    top: 30%;
+    left: 110%;
+    font-size: 30px;
+    font-family: cursive;
+
+}
+#wepink{
+    padding: 28px;
+    border-radius: 40px;
+    width: 300px;
+    font-family: cursive;
+    opacity: 0.3;
+    cursor: pointer;
+} #wepink:active{
+    transform: scale(0.9);
+}   
+#info{
+
+    position: absolute;
+    top: 0;
+    right: 105%;
+    transform: translateY(-10px);
+    font-size: 30px;
+    font-family: cursive;
+    background-color: rgb(54, 230, 54);
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 40px;
+    cursor: pointer;
+
+}
+#info:hover, #info2:hover, #info3:hover{
+    opacity: 0.7;
+
+
+}
+#info:active , #info2:active, #info3:active{
+   font-size: 28px;
+   padding: 1px;
+}
+.posicao{
+
+    position: relative;
+
+}
+#sumonar{
+        width: 800px; height: 500px;
+        background-color: rgb(165, 133, 89);
+        position: absolute;
+        display: none;
+        z-index: 2;
+        top: 50%;   
+        left: 50%;     
+        transform: translate(-50%, -70%)
+        
+    
+
+        
+        
+
+}
+#palavras{
+    font-size: 40px;
+    position: absolute;
+    font-family: cursive;
+    right: 0;
+    left: 0;
+    top: 10%;
+    bottom: 50%;
+    color: white;
+
+}
+#eliminar{
+
+    font-size: 30px;
+    font-family: cursive;
+    background-color: red;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    transform: translate(-4%,-66%);
+    cursor: pointer;
+
+}
+#eliminar:hover{
+    opacity: 0.7;
+
+}
+#eliminar:active{
+    font-size: 25px;
+   
+}
+#info2{
+    
+    position: absolute;
+    top: 0;
+    right: 105%;
+    transform: translateY(90px);
+    font-size: 30px;
+    font-family: cursive;
+    background-color: rgb(54, 230, 54);
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 40px;
+    cursor: pointer;
+
+}
+#video{
+    position: absolute;
+    top: 50%;            /* centraliza verticalmente em relação ao pai */
+    left: 110%;          /* fica imediatamente à direita do botão */
+    transform: translateY(-36%); /* centraliza verticalmente */
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    z-index: 2;
+    display: none;
+}
+    
+
+
+#praficar{
+    position: relative;
+    display: inline-block;
+}
+#roll{
+    position: absolute;
+    z-index: 2;
+    left: 15%;
+    font-size: 30px;
+    font-family: cursive;
+    padding: 30px;
+    border-radius: 30px;
+    display: none;
+
+}
+#roll:hover{
+    opacity: 0.7;
+}
+#roll:active{
+    transform: scale(0.9);
+}
+#mostradorderolagem{
+    position: absolute;
+    z-index: 2;
+    left: 15%;
+    font-size: 30px;
+    font-family: cursive;
+    padding: 30px;
+    border-radius: 30px;
+    top: 50%;
+    display: none;
+
+}
+#farmmerge{
+
+    position: absolute;
+    top: 2%;
+    left: 130%;
+    padding: 20px;
+    font-size: 17px;
+    font-family: cursive;
+    border-radius: 40px;
+    background-color: bisque;
+
+
+}
+#farmmerge:hover, #farmmerge2:hover {
+    opacity: 0.7;
+}
+#farmmerge:active, #farmmerge2:active {
+    transform: scale(0.9);
+}
+#melhorias{
+    width: 600px;
+    height: 300px;
+    background:linear-gradient(to top, rgb(126, 95, 69), rgb(189, 154, 89));
+    position: absolute;
+    right: 120%;
+    box-shadow: 0px 0px 30px;
+    
+    
+}
+
+
+#melhorar{
+    position: absolute;
+    left: 5%;
+    font-family: cursive;
+    background-color: greenyellow;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+#melhorar:active{
+    transform: scale(0.9);
+}
+#infomelhorar{
+    position: absolute;
+    left: 41%;
+    font-size: 25px;
+    font-family: cursive;
+    background-color:rgb(56, 207, 56); ;
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 40px;
+    cursor: pointer;
+    
+}
+#infomelhorar:hover{
+    opacity: 0.7;
+}
+#infomelhorar:active{
+    font-size: 23px;
+   padding-right: 3px;
+}
+#contadormelhorar{
+    position: absolute;
+    left: 51%;
+    font-size: 25px;
+    font-family: cursive;
+    transform: translateY(4%);
+}
+#info3{
+    position: absolute;
+    top: 0;
+    right: 105%;
+    transform: translateY(190px);
+    font-size: 30px;
+    font-family: cursive;
+    background-color: rgb(54, 230, 54);
+    border: 1px solid white;
+    border-radius: 100%;
+    width: 40px;
+    cursor: pointer;
+}
+#pracontar3{
+    position: absolute;
+    top: 62%;
+    left: 110%;
+    font-size: 30px;
+    font-family: cursive;
+}
+#farmmerge2{
+    position: absolute;
+    top: 35%;
+    left: 130%;
+    padding: 20px;
+    font-size: 17px;
+    font-family: cursive;
+    border-radius: 40px;
+    background-color: bisque;
+    display: none;
+}
+#jumpscare{
+    z-index: 4;
+    width: 1000px;
+    height: 800px;
+    position: absolute;
+    
+    transform: translate(-30%, -10%);
+    top: 0;
+    display: none;
+    filter: saturate(10);
+}
